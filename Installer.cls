@@ -6,16 +6,12 @@ XData setup
 <Manifest>
   <Default Name="Namespace" Value="IRISAPP"/>
   <Default Name="app" Value="irisapp" />
+
   <Namespace Name="${Namespace}" Code="${Namespace}" Data="${Namespace}" Create="yes" Ensemble="no">
-
     <Configuration>
-      <Database Name="${Namespace}" Dir="/opt/${app}/data" Create="yes" Resource="%DB_${Namespace}"/>
-
+      <Database Name="${Namespace}" Dir="/voldata/irisdb/${app}" Create="yes" Resource="%DB_${Namespace}"/>
     </Configuration>
-   
   </Namespace>
-  
-
 </Manifest>
 }
 
