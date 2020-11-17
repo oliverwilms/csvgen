@@ -4,7 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    command: "-b /opt/feeder/vcopy.sh"
+    command: "-b /opt/irisapp/vcopy.sh"
     init: true
     restart: always
     ports: 
