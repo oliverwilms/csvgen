@@ -1,14 +1,17 @@
-version: '3.6'
+version: '3.8'
 services:
   iris:
     build: 
       context: .
       dockerfile: Dockerfile
+    command: "-b /opt/feeder/vcopy.sh"
+    init: true
     restart: always
     ports: 
       - 51773
       - 52773
       - 53773
+    environment:
+      - ISC_DATA_DIRECTORY=/voldata/iconfig
     volumes:
-      - ~/iris.key:/usr/irissys/mgr/iris.key
-      - ./:/irisdev/app
+      - ./:/voldata
