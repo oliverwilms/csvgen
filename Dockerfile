@@ -9,7 +9,8 @@ USER root
 COPY iris.key $ISC_PACKAGE_INSTALLDIR/mgr/
 RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /usr/irissys/mgr/iris.key
 WORKDIR /opt/irisapp
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
+RUN mkdir /ghostdb/ && mkdir /voldata/ && mkdir /voldata/irisdb/
+RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp /ghostdb/ /voldata/ /voldata/irisdb/
 
 # USER irisowner
 USER ${ISC_PACKAGE_MGRUSER}  
